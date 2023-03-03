@@ -387,6 +387,42 @@ footer ul a:hover {
         box-shadow: -2rem 3rem 7rem rgba(0, 0, 0, 0.7);
         background: var(--color-gray-900);
         border-top: 1px solid var(--color-bg);
+        animation: animateDropdown 400ms 0s ease forwards;
+        opacity: 0;
+        transform-origin: top;
+    }
+
+    .nav-items li:nth-child(2) {
+        animation-delay: 200ms;
+        perspective: 400px;
+    }
+
+    .nav-items li:nth-child(3) {
+        animation-delay: 400ms;
+        perspective: 400px;
+    }
+
+    .nav-items li:nth-child(4) {
+        animation-delay: 600ms;
+        perspective: 400px;
+    }
+
+    .nav-items li:nth-child(5) {
+        animation-delay: 800ms;
+        perspective: 400px;
+
+    }
+
+    /* nav dropdown animation */
+    @keyframes animateDropdown {
+        0% {
+            transform: rotateX(90deg);
+        }
+
+        100% {
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
     }
 
     .nav-items li a {
@@ -413,13 +449,31 @@ footer ul a:hover {
         border: 0;
     }
 
+    /* ======================= FEATURED ========================= */
+
+    .featured-container {
+        gap: 3rem;
+    }
+
+    .posts-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
     /* ======================= CATEGORY BUTTONS ========================= */
 
     .category-buttons-container {
         width: fit-content;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 1rem;
     }
+
+    /* ======================= FOOTER ========================= */
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
+
+/* ===================================================== MEDIA QUERIES (SMALL DEVICES) =========================================================== */
+
+@media screen and (max-width: 600px) {}
