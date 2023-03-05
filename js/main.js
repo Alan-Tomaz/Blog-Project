@@ -2,7 +2,6 @@ const navItems = document.querySelector('.nav-items');
 const openNavBtn = document.querySelector('#open-nav-btn');
 const closeNavBtn = document.querySelector('#close-nav-btn');
 
-
 //opens nav dropdown
 const openNav = () => {
     navItems.style.display = 'flex';
