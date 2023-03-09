@@ -19,23 +19,15 @@
 <body>
     <section class="form-section">
         <div class="container form-section-container">
-            <h2>Sign Up</h2>
+            <h2>Sign In</h2>
             <div class="alert-message success">
                 <p>This is an success message</p>
             </div>
-            <form action="" enctype="multipart/form-data">
-                <input type="text" name="" id="" placeholder="First Name">
-                <input type="text" name="" id="" placeholder="Last Name">
-                <input type="text" name="" id="" placeholder="Username">
-                <input type="email" name="" id="" placeholder="E-mail">
-                <input type="password" name="" id="" placeholder="Create Password">
-                <input type="password" name="" id="" placeholder="Confirm Password">
-                <div class="form-control">
-                    <label for="avatar">User Avatar</label>
-                    <input type="file" name="" id="avatar">
-                </div>
-                <button type="submit" class="btn">Sign Up</button>
-                <small>Already have an account? <a href="signin.html">Sign In</a></small>
+            <form action="">
+                <input type="text" name="" id="" placeholder="Username or Email">
+                <input type="password" name="" id="" placeholder="Password">
+                <button type="submit" class="btn">Sign In</button>
+                <small>Don't have an account? <a href="signup.php">Sign Up</a></small>
             </form>
         </div>
     </section>

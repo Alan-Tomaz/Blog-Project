@@ -1,52 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/header.php';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Multipage Blog Website</title>
-    <link rel="shortcut icon" href="../img/favicon-7.png" type="image/x-icon">
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- Iconscout CDN -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <!-- Google Font (Montserrat) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-</head>
+    <section class="search-bar">
+        <form class="container search-bar-container" action="" method="">
+            <div>
+                <i class="uil uil-search"></i>
+                <input type="search" name="" placeholder="Search">
+            </div>
+            <button type="submit" class="btn">Go</button>
+        </form>
+    </section>
 
-<body>
-    <nav>
-        <div class="container nav-container">
-            <a href="../index.html" class="nav-logo">BLOG WEBSITE</a>
-            <ul class="nav-items">
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <!-- <li><a href="./pages/signin.html">Sign In</a></li> -->
-                <li class="nav-profile">
-                    <div class="avatar">
-                        <img src="../img/avatar2.jpg">
-                    </div>
-                    <ul>
-                        <li><a href="./dashboard.html">Dashboard</a></li>
-                        <li><a href="./logout.html">Logout</a></li>
-                    </ul>
-
-                </li>
-            </ul>
-            <button id="open-nav-btn"><i class="uil uil-bars"></i></button>
-            <button id="close-nav-btn"><i class="uil uil-multiply"></i></button>
-        </div>
-    </nav>
-    <!--======================================== End Of Nav ==================================== -->
-
-    <header class="category-title">
-        <h2>Category Title</h2>
-    </header>
-
+    <!--======================================== End Of Search Bar ==================================== -->
 
     <section class="posts">
         <div class="container posts-container">
@@ -55,9 +21,9 @@
                     <img src="../img/blog97.jpg">
                 </div>
                 <div class="post-info">
-                    <a href="./category-posts.html" class="category-button">Wild Life</a>
+                    <a href="./category-posts.php" class="category-button">Wild Life</a>
                     <h3 class="post-title">
-                        <a href="./post.html">Lorem ipsum dolor sit, amet consectetur
+                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
                             adipisicing elit. Doloribus, ratione.</a>
                     </h3>
                     <p class="post-body">
@@ -80,9 +46,9 @@
                     <img src="../img/blog92.jpg">
                 </div>
                 <div class="post-info">
-                    <a href="./category-posts.html" class="category-button">Art</a>
+                    <a href="./category-posts.php" class="category-button">Art</a>
                     <h3 class="post-title">
-                        <a href="./post.html">Lorem ipsum dolor sit, amet consectetur
+                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
                             adipisicing elit. Doloribus, ratione.</a>
                     </h3>
                     <p class="post-body">
@@ -105,9 +71,9 @@
                     <img src="../img/blog17.jpg">
                 </div>
                 <div class="post-info">
-                    <a href="./category-posts.html" class="category-button">Science and Technology</a>
+                    <a href="./category-posts.php" class="category-button">Science and Technology</a>
                     <h3 class="post-title">
-                        <a href="./post.html">Lorem ipsum dolor sit, amet consectetur
+                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
                             adipisicing elit. Doloribus, ratione.</a>
                     </h3>
                     <p class="post-body">
@@ -130,9 +96,9 @@
                     <img src="../img/blog22.jpg">
                 </div>
                 <div class="post-info">
-                    <a href="./category-posts.html" class="category-button">Travel</a>
+                    <a href="./category-posts.php" class="category-button">Travel</a>
                     <h3 class="post-title">
-                        <a href="./post.html">Lorem ipsum dolor sit, amet consectetur
+                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
                             adipisicing elit. Doloribus, ratione.</a>
                     </h3>
                     <p class="post-body">
@@ -155,9 +121,9 @@
                     <img src="../img/blog56.jpg">
                 </div>
                 <div class="post-info">
-                    <a href="./category-posts.html" class="category-button">Wild Life</a>
+                    <a href="./category-posts.php" class="category-button">Wild Life</a>
                     <h3 class="post-title">
-                        <a href="./post.html">Lorem ipsum dolor sit, amet consectetur
+                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
                             adipisicing elit. Doloribus, ratione.</a>
                     </h3>
                     <p class="post-body">
@@ -180,9 +146,9 @@
                     <img src="../img/blog38.jpg">
                 </div>
                 <div class="post-info">
-                    <a href="./category-posts.html" class="category-button">Music</a>
+                    <a href="./category-posts.php" class="category-button">Music</a>
                     <h3 class="post-title">
-                        <a href="./post.html">Lorem ipsum dolor sit, amet consectetur
+                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
                             adipisicing elit. Doloribus, ratione.</a>
                     </h3>
                     <p class="post-body">
@@ -205,9 +171,9 @@
                     <img src="../img/blog2.jpg">
                 </div>
                 <div class="post-info">
-                    <a href="./category-posts.html" class="category-button">Science and Technology</a>
+                    <a href="./category-posts.php" class="category-button">Science and Technology</a>
                     <h3 class="post-title">
-                        <a href="./post.html">Lorem ipsum dolor sit, amet consectetur
+                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
                             adipisicing elit. Doloribus, ratione.</a>
                     </h3>
                     <p class="post-body">
@@ -230,9 +196,9 @@
                     <img src="../img/blog79.jpg">
                 </div>
                 <div class="post-info">
-                    <a href="./category-posts.html" class="category-button">Food</a>
+                    <a href="./category-posts.php" class="category-button">Food</a>
                     <h3 class="post-title">
-                        <a href="./post.html">Lorem ipsum dolor sit, amet consectetur
+                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
                             adipisicing elit. Doloribus, ratione.</a>
                     </h3>
                     <p class="post-body">
@@ -255,9 +221,9 @@
                     <img src="../img/blog40.jpg">
                 </div>
                 <div class="post-info">
-                    <a href="./category-posts.html" class="category-button">Art</a>
+                    <a href="./category-posts.php" class="category-button">Art</a>
                     <h3 class="post-title">
-                        <a href="./post.html">Lorem ipsum dolor sit, amet consectetur
+                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
                             adipisicing elit. Doloribus, ratione.</a>
                     </h3>
                     <p class="post-body">
@@ -284,73 +250,17 @@
 
     <section class="category-buttons">
         <div class="container category-buttons-container">
-            <a href="./category-posts.html" class="category-button">Wild Life</a>
-            <a href="./category-posts.html" class="category-button">Art</a>
-            <a href="./category-posts.html" class="category-button">Travel</a>
-            <a href="./category-posts.html" class="category-button">Music</a>
-            <a href="./category-posts.html" class="category-button">Science & Technology</a>
-            <a href="./category-posts.html" class="category-button">Food</a>
+            <a href="./category-posts.php" class="category-button">Wild Life</a>
+            <a href="./category-posts.php" class="category-button">Art</a>
+            <a href="./category-posts.php" class="category-button">Travel</a>
+            <a href="./category-posts.php" class="category-button">Music</a>
+            <a href="./category-posts.php" class="category-button">Science & Technology</a>
+            <a href="./category-posts.php" class="category-button">Food</a>
         </div>
     </section>
 
     <!--======================================== End Of Category Buttons ==================================== -->
 
-    <footer>
-        <div class="footer-socials">
-            <a href="https://youtube.com" target="_blank"><i class="uil uil-youtube"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="uil uil-linkedin"></i></a>
-            <a href="https://facebook.com" target="_blank"><i class="uil uil-facebook-f"></i></a>
-        </div>
-        <div class="container footer-container">
-            <article>
-                <h4>Categories</h4>
-                <ul>
-                    <li><a href="">Wild Life</a></li>
-                    <li><a href="">Art</a></li>
-                    <li><a href="">Travel</a></li>
-                    <li><a href="">Music</a></li>
-                    <li><a href="">Science and Technology</a></li>
-                    <li><a href="">Food</a></li>
-                </ul>
-            </article>
-            <article>
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="">Online Support</a></li>
-                    <li><a href="">Call Numbers</a></li>
-                    <li><a href="">Emails</a></li>
-                    <li><a href="">Social Support</a></li>
-                    <li><a href="">Location</a></li>
-                </ul>
-            </article>
-            <article>
-                <h4>Blog</h4>
-                <ul>
-                    <li><a href="">Safety</a></li>
-                    <li><a href="">Repair</a></li>
-                    <li><a href="">Recent</a></li>
-                    <li><a href="">Popular</a></li>
-                    <li><a href="">Categories</a></li>
-                </ul>
-            </article>
-            <article>
-                <h4>Permalinks</h4>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Blog</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </article>
-        </div>
-        <div class="footer-copyright">
-            <small>Copyright &copy; 2022 EGATOR TUTORIALS</small>
-        </div>
-    </footer>
-    <script src="../js/main.js"></script>
-</body>
-
-</html>
+  <?php
+include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/footer.php';
+    ?>

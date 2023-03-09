@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Multipage Blog Website</title>
-    <link rel="shortcut icon" href="../img/favicon-7.png" type="image/x-icon">
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- Iconscout CDN -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <!-- Google Font (Montserrat) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <nav>
-        <div class="container nav-container">
-            <a href="../index.html" class="nav-logo">BLOG WEBSITE</a>
-            <ul class="nav-items">
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <!-- <li><a href="./pages/signin.html">Sign In</a></li> -->
-                <li class="nav-profile">
-                    <div class="avatar">
-                        <img src="../img/avatar2.jpg">
-                    </div>
-                    <ul>
-                        <li><a href="./dashboard.html">Dashboard</a></li>
-                        <li><a href="./logout.html">Logout</a></li>
-                    </ul>
-
-                </li>
-            </ul>
-            <button id="open-nav-btn"><i class="uil uil-bars"></i></button>
-            <button id="close-nav-btn"><i class="uil uil-multiply"></i></button>
-        </div>
-    </nav>
-    <!--======================================== End Of Nav ==================================== -->
-
-
-    <section class="empty-page">
-        <h1>Contact Page</h1>
-    </section>
-
-    <footer>
+<footer>
         <div class="footer-socials">
             <a href="https://youtube.com" target="_blank"><i class="uil uil-youtube"></i></a>
             <a href="https://instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
@@ -103,7 +53,7 @@
             <small>Copyright &copy; 2022 EGATOR TUTORIALS</small>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
+    <script src="<?php echo ROOT_URL ?>js/main.js"></script>
 </body>
 
 </html>
