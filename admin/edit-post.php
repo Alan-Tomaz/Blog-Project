@@ -1,7 +1,6 @@
   <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/Blog/admin/partials/header.php';
     ?>
-
 
     <section class="form-section add-content">
         <div class="container form-section-container ">

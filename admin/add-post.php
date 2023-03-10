@@ -1,5 +1,5 @@
   <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/Blog/admin/partials/header.php';
     ?>
 
 

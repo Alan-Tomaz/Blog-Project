@@ -1,5 +1,5 @@
   <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/Blog/admin/partials/header.php';
     ?>
 
 
@@ -16,7 +16,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/header.php';
                         </a>
                     </li>
                     <li>
-                        <a href="./dashboard.php">
+                        <a href="./index.php">
                             <i class="uil uil-postcard"></i>
                             <h5>Manage Posts</h5>
                         </a>
