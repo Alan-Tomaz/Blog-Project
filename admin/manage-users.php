@@ -21,6 +21,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/Blog/admin/partials/header.php';
                             <h5>Manage Posts</h5>
                         </a>
                     </li>
+                    <?php if (isset($_SESSION['user-is-admin'])) : ?>
                     <li>
                         <a href="./add-user.php">
                             <i class="uil uil-user-plus"></i>
@@ -46,6 +47,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/Blog/admin/partials/header.php';
                             <h5>Manage Categories</h5>
                         </a>
                     </li>
+                    <?php endif ?>
                 </ul>
             </aside>
             <main>

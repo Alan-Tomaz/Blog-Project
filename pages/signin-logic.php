@@ -21,6 +21,7 @@ else {
         //convert the record into assoc array
         $userRecord = mysqli_fetch_assoc($fetchUserResult);
         $dbPassword = $userRecord['password'];
+
         //compare form password with database password
         if(password_verify($password, $dbPassword)) {
             // set session for access the control
@@ -29,17 +30,13 @@ else {
             if ($userRecord["is_admin"] == 1) {
                 $_SESSION["user-is-admin"] = true;
             }
-
             //log user in
             header("location: " . ROOT_URL . "admin/index.php");
-        }
-
-        else {
+            die();
+        } else {
         $_SESSION["signin"] = "Please Check Your Input";
     }
-    }
-
-    else {
+    } else {
         $_SESSION['signin'] = "User Not Found";
     }
 
