@@ -13,14 +13,14 @@ if (isset($_GET['id'])) {
 
     //FOR LATER
     // update category_id of posts that belong to this category to id of uncategorized category
+    $updateQuery = "UPDATE posts SET category_id = 1 WHERE category_id = $id";
+    $updateResult = mysqli_query($connection, $updateQuery);
 
-    //delete category
-    $deleteCategoryQuery = "DELETE FROM categories WHERE id='$id' LIMIT 1";
-    $deleteCategoryResult = mysqli_query($connection, $deleteCategoryQuery);
-    if (mysqli_errno($connection)) {
-        $_SESSION['delete-category'] = "Couldn't Delete '{$category['title']}' Category";
-    } else {
-        $_SESSION['delete-category-success'] = "'{$category['title']}' Category Deleted Successfully";
+    if (!mysqli_errno($connection)) {
+        //delete category
+        $deleteCategoryQuery = "DELETE FROM categories WHERE id='$id' LIMIT 1";
+        $deleteCategoryResult = mysqli_query($connection, $deleteCategoryQuery);
+        $_SESSION['delete-category-success'] = "Category Deleted Successfully";
     }
 }
 

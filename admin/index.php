@@ -1,9 +1,9 @@
   <?php
     include $_SERVER['DOCUMENT_ROOT'] . '/Blog/admin/partials/header.php';
 
-    $currentAdminId = $_SESSION['user-id'];
 
-    $query = "SELECT * FROM posts ORDER BY title";
+    $currentUserId = $_SESSION["user-id"];
+    $query = "SELECT id, title, category_id FROM posts WHERE author_id = $currentUserId ORDER BY id DESC";
     $posts = mysqli_query($connection, $query);
     ?>
 
@@ -16,16 +16,6 @@
                   <?=
                     $_SESSION['add-post-success'];
                     unset($_SESSION['add-post-success']);
-                    ?>
-              </p>
-          </div>
-      <?php elseif (isset($_SESSION['add-post'])) : //shows if edit categories was not successfully
-        ?>
-          <div class="alert-message error container">
-              <p>
-                  <?=
-                    $_SESSION['add-post'];
-                    unset($_SESSION['add-post']);
                     ?>
               </p>
           </div>
@@ -132,9 +122,16 @@
                       </thead>
                       <tbody>
                           <?php while ($post = mysqli_fetch_assoc($posts)) : ?>
+                              <!-- get category title of each post from categories table  -->
+                              <?php
+                                $categoryId = $post["category_id"];
+                                $categoryQuery = "SELECT title FROM categories where id=$categoryId";
+                                $categoryResult = mysqli_query($connection, $categoryQuery);
+                                $category = mysqli_fetch_assoc($categoryResult);
+                                ?>
                               <tr>
-                                  <td><?= $post['title'] ?></td>
-                                  <td>Undefinized</td>
+                                  <td><?= $post["title"] ?></td>
+                                  <td><?= $category["title"] ?></td>
                                   <td><a href="<?= ROOT_URL ?>admin/edit-post.php?id=<?= $post['id'] ?>" class="btn sm">Edit</a></td>
                                   <td><a href="<?= ROOT_URL ?>admin/delete-post.php?id=<?= $post['id'] ?>" class="btn sm danger">Delete</a></td>
                               </tr>
