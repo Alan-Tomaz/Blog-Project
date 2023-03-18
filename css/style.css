@@ -251,6 +251,11 @@ nav button {
     margin-bottom: 5rem;
 }
 
+/* margin used when not exist a feature post */
+.section-extra-margin {
+    margin-top: 10rem;
+}
+
 /* ===================================================== Category Buttons =========================================================== */
 
 .category-buttons {
@@ -565,6 +570,7 @@ select {
     cursor: default;
     transition: var(--transition);
 }
+
 
 
 /* #region MEDIA QUERIES (MEDIA DEVICES) */

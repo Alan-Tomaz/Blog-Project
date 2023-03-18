@@ -43,7 +43,7 @@ $posts = mysqli_query($connection, $query);
                         <img src="./img/<?= $author["avatar"] ?>">
                     </div>
                     <div class="post-avatar-info">
-                        <h5><?= "{$author['firstname']} {$author['lastname']}" ?></h5>
+                        <h5>By: <?= "{$author['firstname']} {$author['lastname']}" ?></h5>
                         <small><?= date("M d, Y - H:i", strtotime($featured["date_time"])) ?></small>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ $posts = mysqli_query($connection, $query);
 <?php endif ?>
 <!--======================================== End Of Featured ==================================== -->
 
-<section class="posts">
+<section class="posts <?= $featured ? '' : 'section-extra-margin' ?>">
     <div class="container posts-container">
         <?php while ($post = mysqli_fetch_assoc($posts)) : ?>
             <article class="post">
@@ -88,7 +88,7 @@ $posts = mysqli_query($connection, $query);
                             <img src="./img/<?= $author["avatar"] ?>">
                         </div>
                         <div class="post-author-info">
-                            <h5><?= "{$author['firstname']} {$author['lastname']}" ?></h5>
+                            <h5>By: <?= "{$author['firstname']} {$author['lastname']}" ?></h5>
                             <small><?= date("M d, Y - H:i", strtotime($post["date_time"])) ?></small>
                         </div>
                     </div>

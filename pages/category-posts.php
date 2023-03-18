@@ -1,259 +1,87 @@
   <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/header.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/header.php';
+
+    //fetch posts if id is set
+    if (isset($_GET["id"])) {
+        $id = filter_var($_GET["id"], FILTER_SANITIZE_NUMBER_INT);
+        $query = "SELECT * FROM posts WHERE category_id = $id ORDER BY date_time DESC";
+        $result = mysqli_query($connection, $query);
+    } else {
+        header("location: " . ROOT_URL . "pages/blog.php");
+        die();
+    }
     ?>
 
-    <header class="category-title">
-        <h2>Category Title</h2>
-    </header>
+  <header class="category-title">
+      <?php
+        //fetch category from categories table using category_id of post 
+        $categoryQuery = "SELECT * FROM categories WHERE id = $id";
+        $categoryResult = mysqli_query($connection, $categoryQuery);
+        $category = mysqli_fetch_assoc($categoryResult);
+        echo "<h2>" . $category["title"] . "</h2>";
+        ?>
+  </header>
 
+  <?php if (mysqli_num_rows($result) > 0) : ?>
+      <section class="posts">
+          <div class="container posts-container">
+              <?php while ($post = mysqli_fetch_assoc($result)) : ?>
+                  <article class="post">
 
-    <section class="posts">
-        <div class="container posts-container">
-            <article class="post">
-                <div class="post-thumbnail">
-                    <img src="../img/blog97.jpg">
-                </div>
-                <div class="post-info">
-                    <a href="./category-posts.php" class="category-button">Wild Life</a>
-                    <h3 class="post-title">
-                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Doloribus, ratione.</a>
-                    </h3>
-                    <p class="post-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae officiis quod fugit
-                        architecto exercitationem ea, quia dolore voluptatum magni cumque minus debitis ipsam.
-                    </p>
-                    <div class="post-author">
-                        <div class="post-author-avatar">
-                            <img src="../img/avatar8.jpg">
-                        </div>
-                        <div class="post-author-info">
-                            <h5>By: John Mills</h5>
-                            <small>February 28, 2023 - 06:33</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <div class="post-thumbnail">
-                    <img src="../img/blog92.jpg">
-                </div>
-                <div class="post-info">
-                    <a href="./category-posts.php" class="category-button">Art</a>
-                    <h3 class="post-title">
-                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Doloribus, ratione.</a>
-                    </h3>
-                    <p class="post-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae officiis quod fugit
-                        architecto exercitationem ea, quia dolore voluptatum magni cumque minus debitis ipsam.
-                    </p>
-                    <div class="post-author">
-                        <div class="post-author-avatar">
-                            <img src="../img/avatar2.jpg">
-                        </div>
-                        <div class="post-author-info">
-                            <h5>By: Alan Wells</h5>
-                            <small>February 23, 2023 - 10:34</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <div class="post-thumbnail">
-                    <img src="../img/blog17.jpg">
-                </div>
-                <div class="post-info">
-                    <a href="./category-posts.php" class="category-button">Science and Technology</a>
-                    <h3 class="post-title">
-                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Doloribus, ratione.</a>
-                    </h3>
-                    <p class="post-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae officiis quod fugit
-                        architecto exercitationem ea, quia dolore voluptatum magni cumque minus debitis ipsam.
-                    </p>
-                    <div class="post-author">
-                        <div class="post-author-avatar">
-                            <img src="../img/avatar3.jpg">
-                        </div>
-                        <div class="post-author-info">
-                            <h5>By: Miles Holyday</h5>
-                            <small>February 21, 2023 - 18:05</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <div class="post-thumbnail">
-                    <img src="../img/blog22.jpg">
-                </div>
-                <div class="post-info">
-                    <a href="./category-posts.php" class="category-button">Travel</a>
-                    <h3 class="post-title">
-                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Doloribus, ratione.</a>
-                    </h3>
-                    <p class="post-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae officiis quod fugit
-                        architecto exercitationem ea, quia dolore voluptatum magni cumque minus debitis ipsam.
-                    </p>
-                    <div class="post-author">
-                        <div class="post-author-avatar">
-                            <img src="../img/avatar5.jpg">
-                        </div>
-                        <div class="post-author-info">
-                            <h5>By: Rose Carter</h5>
-                            <small>February 18, 2023 - 13:27</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <div class="post-thumbnail">
-                    <img src="../img/blog56.jpg">
-                </div>
-                <div class="post-info">
-                    <a href="./category-posts.php" class="category-button">Wild Life</a>
-                    <h3 class="post-title">
-                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Doloribus, ratione.</a>
-                    </h3>
-                    <p class="post-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae officiis quod fugit
-                        architecto exercitationem ea, quia dolore voluptatum magni cumque minus debitis ipsam.
-                    </p>
-                    <div class="post-author">
-                        <div class="post-author-avatar">
-                            <img src="../img/avatar9.jpg">
-                        </div>
-                        <div class="post-author-info">
-                            <h5>By: Janeth Smith</h5>
-                            <small>February 15, 2023 - 15:11</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <div class="post-thumbnail">
-                    <img src="../img/blog38.jpg">
-                </div>
-                <div class="post-info">
-                    <a href="./category-posts.php" class="category-button">Music</a>
-                    <h3 class="post-title">
-                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Doloribus, ratione.</a>
-                    </h3>
-                    <p class="post-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae officiis quod fugit
-                        architecto exercitationem ea, quia dolore voluptatum magni cumque minus debitis ipsam.
-                    </p>
-                    <div class="post-author">
-                        <div class="post-author-avatar">
-                            <img src="../img/avatar11.jpg">
-                        </div>
-                        <div class="post-author-info">
-                            <h5>By: Roger Bill</h5>
-                            <small>February 13, 2023 - 09:14</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <div class="post-thumbnail">
-                    <img src="../img/blog2.jpg">
-                </div>
-                <div class="post-info">
-                    <a href="./category-posts.php" class="category-button">Science and Technology</a>
-                    <h3 class="post-title">
-                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Doloribus, ratione.</a>
-                    </h3>
-                    <p class="post-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae officiis quod fugit
-                        architecto exercitationem ea, quia dolore voluptatum magni cumque minus debitis ipsam.
-                    </p>
-                    <div class="post-author">
-                        <div class="post-author-avatar">
-                            <img src="../img/avatar8.jpg">
-                        </div>
-                        <div class="post-author-info">
-                            <h5>By: John Mills</h5>
-                            <small>February 07, 2023 - 22:54</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <div class="post-thumbnail">
-                    <img src="../img/blog79.jpg">
-                </div>
-                <div class="post-info">
-                    <a href="./category-posts.php" class="category-button">Food</a>
-                    <h3 class="post-title">
-                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Doloribus, ratione.</a>
-                    </h3>
-                    <p class="post-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae officiis quod fugit
-                        architecto exercitationem ea, quia dolore voluptatum magni cumque minus debitis ipsam.
-                    </p>
-                    <div class="post-author">
-                        <div class="post-author-avatar">
-                            <img src="../img/avatar5.jpg">
-                        </div>
-                        <div class="post-author-info">
-                            <h5>By: Rose Carter</h5>
-                            <small>February 03, 2023 - 17:54</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="post">
-                <div class="post-thumbnail">
-                    <img src="../img/blog40.jpg">
-                </div>
-                <div class="post-info">
-                    <a href="./category-posts.php" class="category-button">Art</a>
-                    <h3 class="post-title">
-                        <a href="./post.php">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Doloribus, ratione.</a>
-                    </h3>
-                    <p class="post-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae officiis quod fugit
-                        architecto exercitationem ea, quia dolore voluptatum magni cumque minus debitis ipsam.
-                    </p>
-                    <div class="post-author">
-                        <div class="post-author-avatar">
-                            <img src="../img/avatar2.jpg">
-                        </div>
-                        <div class="post-author-info">
-                            <h5>By: Allan Wells</h5>
-                            <small>February 01, 2023 - 07:21</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
+                      <div class="post-thumbnail">
+                          <img src="../img/<?= $post["thumbnail"] ?>">
+                      </div>
+                      <div class="post-info">
+                          <h3 class="post-title">
+                              <a href="<?= ROOT_URL ?>pages/post.php?id=<?= $post["id"] ?>"><?= $post["title"] ?></a>
+                          </h3>
+                          <p class="post-body">
+                              <?= substr($post["body"], 0, 150) ?>...
+                          </p>
+                          <div class="post-author">
+                              <?php
+                                //fetch author from users table using author_id
+                                $authorId = $post["author_id"];
+                                $authorQuery = "SELECT * FROM users WHERE id = $authorId";
+                                $authorResult = mysqli_query($connection, $authorQuery);
+                                $author = mysqli_fetch_assoc($authorResult);
+                                ?>
+                              <div class="post-author-avatar">
+                                  <img src="../img/<?= $author["avatar"] ?>">
+                              </div>
+                              <div class="post-author-info">
+                                  <h5>By: <?= "{$author['firstname']} {$author['lastname']}" ?></h5>
+                                  <small><?= date("M d, Y - H:i", strtotime($post["date_time"])) ?></small>
+                              </div>
+                          </div>
+                      </div>
+                  </article>
 
+              <?php endwhile ?>
+          </div>
+      </section>
+  <?php else : ?>
+      <div class="alert-message error lg">
+          <p style="text-align: center;">No Posts Founds For This Category</p>
+      </div>
+  <?php endif ?>
+  <!--======================================== End Of Posts ==================================== -->
 
-        </div>
-    </section>
+  <section class="category-buttons">
+      <div class="container category-buttons-container">
+          <?php
+            $allCategoriesQuery = "SELECT * FROM categories";
+            $allCategories = mysqli_query($connection, $allCategoriesQuery);
 
-    <!--======================================== End Of Posts ==================================== -->
+            ?>
+          <?php while ($category = mysqli_fetch_assoc($allCategories)) : ?>
+              <a href="<?= ROOT_URL ?>pages/category-posts.php?id=<?= $category["id"] ?>" class="category-button"><?= $category["title"] ?></a>
+          <?php endwhile ?>
+      </div>
+  </section>
 
-    <section class="category-buttons">
-        <div class="container category-buttons-container">
-            <a href="./category-posts.php" class="category-button">Wild Life</a>
-            <a href="./category-posts.php" class="category-button">Art</a>
-            <a href="./category-posts.php" class="category-button">Travel</a>
-            <a href="./category-posts.php" class="category-button">Music</a>
-            <a href="./category-posts.php" class="category-button">Science & Technology</a>
-            <a href="./category-posts.php" class="category-button">Food</a>
-        </div>
-    </section>
+  <!--======================================== End Of Category Buttons ==================================== -->
 
-    <!--======================================== End Of Category Buttons ==================================== -->
-
-     <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/footer.php';
+  <?php
+    include $_SERVER['DOCUMENT_ROOT'] . '/Blog/partials/footer.php';
     ?>
